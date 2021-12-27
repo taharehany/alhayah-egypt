@@ -49,35 +49,6 @@ $(document).ready(function () {
     }
   });
 
-  //testimonial slider owl
-  $(".testimonial-carousel").owlCarousel({
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 7000,
-    items: 2,
-    nav: false,
-    dots: true,
-    rtl: true,
-    smartSpeed: 1000,
-    margin: 20,
-    navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      575: {
-        items: 1,
-      },
-      768: {
-        items: 1,
-      },
-
-      992: {
-        items: 1,
-      }
-    }
-  });
-
   //clients slider owl
   $(".clients-carousel").owlCarousel({
     loop: true,

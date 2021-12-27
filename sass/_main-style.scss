@@ -741,8 +741,8 @@ section.video {
 	.content {
 		.vid-icon {
 			text-align: center;
-			margin: 0 auto 30px;
-			background-color: $second_color;
+			margin: 0 auto 50px;
+			background-color: #1a5db6;
 			@include borderRadius(50%);
 			width: 90px;
 			height: 90px;
@@ -754,7 +754,7 @@ section.video {
 
 			i {
 				color: #fff;
-				font-size: 50px;
+				font-size: 40px;
 
 				&::before {
 					line-height: inherit;
@@ -853,6 +853,7 @@ section.about-tabs {
 					line-height: 1.8;
 					font-size: 18px;
 				}
+
 				.image {
 					img {
 						width: 100%;
@@ -942,17 +943,9 @@ section.cta {
 					font-size: 14px;
 					font-weight: 600;
 					color: #fff;
-					@include borderRadius(30px);
-					padding: 10px 30px;
-
-					&.btn-1 {
-						background-color: $main_color;
-						margin-inline-end: 10px
-					}
-
-					&.btn-2 {
-						background-color: $second_color
-					}
+					padding: 15px 30px;
+					background-color: $second_color;
+					@include borderRadius(0);
 
 					&:hover {
 						background-color: $dark_color;
@@ -967,72 +960,387 @@ section.cta {
 
 //call to action
 
-//testimonial
-section.testimonial {
+//services
+section.services {
 	padding: $padding_section;
-	background-color: #fff;
-	background-image: url(../images/bgs/pattern-bg.png);
-	background-size: cover;
+	background-color: #F8F8FA;
 
 	.main-title {
-		text-align: center
+		text-align: center;
+	}
+
+	@supports (grid-row-gap: 45px) {
+		.row {
+			grid-row-gap: 45px;
+		}
+	}
+
+	@supports not (grid-row-gap: 45px) {
+		.content {
+			.box {
+				margin-bottom: 45px;
+			}
+		}
 	}
 
 	.content {
-		.testimonial-box {
+		.service-box {
+			position: relative;
+			// @include boxshadow(0 15px 25px rgb(0 0 0 / 13%));
 			background-color: transparent;
-			text-align: center;
+			// text-align: center;
+			@include transition(all ease 0.3s);
 
-			.text {
-				margin-bottom: 20px;
+			&:hover {
+				@include boxshadow(none);
+			}
 
-				h3 {
-					font-size: 18px;
-					font-weight: 600;
-					margin-bottom: 2px;
-					color: $second_color;
+			.trending-label {
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 2;
+				width: 0;
+				height: 0;
+				border-width: 0 60px 60px 0;
+				border-style: solid;
+				border-color: transparent;
+				border-right-color: #FFA942;
+
+				i {
+					position: absolute;
+					top: 11px;
+					left: 35px;
+					color: #fff;
+					font-size: 14px;
 				}
 			}
 
 			.image {
-				width: 70px;
-				height: 70px;
-				@include borderRadius(50%);
 				overflow: hidden;
-				margin: 15px auto;
+				position: relative;
+				@extend %center;
+
+				&::after {
+					@include transition(all ease 0.5s);
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					background-color: rgba(255, 255, 255, 0.2);
+				}
+
+				&:hover {
+					&::after {
+						width: 100%;
+						height: 100%;
+					}
+				}
 
 				img {
 					@extend %fitimage;
+					height: 300px;
+				}
+			}
+
+			.details {
+				background-color: #fff;
+				padding: 25px 15px;
+				margin-top: -50px;
+				z-index: 9;
+				position: relative;
+				max-width: 90%;
+
+				&::after {
+					content: "droplet-fill";
+					position: absolute;
+					left: 10px;
+					top: -35px;
+					font-family: "bootstrap-icons";
+					-webkit-font-smoothing: antialiased;
+					font-style: normal;
+					font-variant: normal;
+					font-size: 45px;
+					color: $main_color;
+				}
+
+				.title {
+					color: $main_color;
+					font-size: 24px;
+					font-weight: 700;
+				}
+
+				p {
+					color: $gray;
+					font-size: 16px;
+					height: 65px;
+				}
+
+				.btns {
+					.btn {
+						font-size: 14px;
+						font-weight: 600;
+						border: 2px solid #eee;
+						text-transform: capitalize;
+						@include transition(all ease 0.3s);
+						@include borderRadius(0);
+						padding: 10px 25px;
+
+						&:hover {
+							background-color: $dark_color;
+							color: #fff;
+							border-color: $dark_color
+						}
+
+						i {
+							margin-inline-start: 5px;
+							font-size: 14px
+						}
+					}
 				}
 			}
 		}
 
-		.details {
-			margin-bottom: 15px;
+		.services-btn {
+			@extend .item-btn;
+			text-align: center;
+			margin-top: 50px;
 
 			p {
-				font-size: 16px;
-				font-weight: 600;
-				font-style: normal;
-				max-width: 880px;
-				margin: auto;
-				color: #999999;
-				@extend %max_lines;
-				-webkit-line-clamp: 5;
-				line-height: 26px;
+				color: $gray;
+				@extend %center;
 			}
 
-			.quote {
-				width: 50px;
-				display: inline-block;
-				margin: 15px auto;
-				opacity: 0.5;
+			.btn {
+				background-color: transparent;
+				padding: 0;
+				color: #000;
+				border: none;
+				text-decoration: underline;
+				margin-inline-start: 5px;
+
+				&:hover {
+					background-color: transparent;
+				}
 			}
 		}
 	}
 }
 
-//testimonial
+//services
+
+//contact bg
+section.contact-bg {
+	@extend .video;
+
+	.content {
+		.icon {
+			@extend .vid-icon;
+
+			i {
+				font-size: 30px;
+			}
+		}
+
+		.text {
+			@extend .vid-text;
+		}
+	}
+}
+
+//contact bg
+
+//contact
+section.contact {
+	padding: 100px 0 60px 0;
+	background-color: #fff;
+	background-image: url(../images/bgs/contact.png);
+	background-size: cover;
+
+	.main-title {
+		h2 {
+			font-size: 24px;
+		}
+	}
+
+	.content {
+		padding: 60px;
+		margin-top: -250px;
+		background-color: #fff;
+		@include boxshadow(0 20px 40px rgb(0 0 0 / 18%));
+		position: relative;
+		z-index: 9;
+
+		.image {
+			height: 100%;
+
+			img {
+				@extend %fitimage;
+			}
+		}
+
+		.contact-form {
+			padding-inline-start: 50px;
+
+			.form-group {
+				margin-bottom: 30px;
+
+				label {
+					display: block;
+					margin-bottom: 15px;
+					font-weight: 600;
+					text-transform: capitalize;
+					font-size: 14px;
+				}
+
+				.form-control,
+				.form-select {
+					display: block;
+					width: 100%;
+					line-height: 28px;
+					padding: 15px 15px;
+					color: #222222;
+					font-size: 14px;
+					font-weight: 400;
+					border-radius: 0px;
+					background-color: #F8F8FA;
+					border-color: #F8F8FA;
+
+					&:focus {
+						border-color: $dark_color;
+						box-shadow: none;
+					}
+				}
+
+				textarea {
+					height: auto !important;
+				}
+			}
+		}
+
+		.contact-btn {
+			@extend .item-btn;
+
+			.btn {
+				border-color: $second_color;
+				background-color: $second_color;
+				color: #fff;
+				width: 100%;
+
+				&:hover {
+					color: #fff;
+					border-color: $dark_color;
+				}
+			}
+		}
+
+		.successfully {
+			font-size: 16px;
+			margin-bottom: 25px;
+			color: $second_color;
+		}
+	}
+}
+
+//contact
+
+//contact info
+section.contact-info {
+	background-color: #1E60AA;
+	padding: 100px 0 50px;
+
+	.content {
+		position: relative;
+
+		.details {
+			width: 100%;
+			margin-top: -200px;
+			position: absolute;
+			z-index: 99;
+			margin-bottom: 30px;
+		}
+
+		.info-box {
+			background-color: #fff;
+			padding: 30px;
+			text-align: center;
+
+			.icon {
+				margin-top: -30px;
+				position: relative;
+				margin-bottom: 30px;
+
+				&::after {
+					content: "droplet-fill";
+					position: absolute;
+					left: calc(50% - 40px);
+					top: -53px;
+					font-family: "bootstrap-icons";
+					-webkit-font-smoothing: antialiased;
+					font-style: normal;
+					font-variant: normal;
+					font-size: 80px;
+					color: $main_color;
+				}
+
+				i {
+					color: #fff;
+					font-size: 26px;
+					position: relative;
+					z-index: 5;
+				}
+			}
+
+			h4 {
+				color: $main_color;
+				font-size: 20px;
+			}
+
+			p {
+				height: 25px;
+				font-size: 16px;
+
+				a {
+					color: #111;
+				}
+			}
+		}
+
+		.text {
+			text-align: center;
+			color: #fff;
+			margin-bottom: 25px;
+
+			p {
+				max-width: 770px;
+				margin: auto;
+				font-size: 14px;
+			}
+
+			.info-logo {
+				img {
+					max-width: 200px;
+				}
+			}
+		}
+
+		.social-links {
+			text-align: center;
+
+			a {
+				color: #fff;
+				font-size: 15px;
+				margin: 0 10px;
+			}
+		}
+	}
+}
+
+//contact info
+
+.map {
+	line-height: 0;
+}
 
 //clients
 section.clients {
@@ -1063,150 +1371,21 @@ section.clients {
 
 //footer
 footer {
-	background-color: $main_color;
-	padding: 60px 0 0;
+	background-color: #ddd;
 
 	.row {
 		row-gap: 20px;
 	}
 
-	.footer-content {
-		padding-bottom: 30px;
-
-		.footer-box {
-			.text {
-				p {
-					color: #fff;
-					font-size: 14px;
-					line-height: 1.7em;
-					@extend %max_lines;
-					-webkit-line-clamp: 5;
-				}
-
-				.footer-logo {
-					margin-bottom: 10px;
-
-					img {
-						max-width: 100px;
-					}
-				}
-			}
-
-			.social-links {
-				h4 {
-					color: #fff;
-					font-size: 18px;
-					margin-bottom: 15px;
-				}
-
-				.links {
-					a {
-						color: #ddd;
-						font-size: 16px;
-						margin-inline-end: 15px;
-						@include transition(all ease .3s);
-
-						&:hover {
-							color: $main_color;
-							opacity: 1;
-						}
-					}
-				}
-			}
-
-			h3 {
-				font-size: 18px;
-				position: relative;
-				font-weight: 600;
-				color: #ffffff;
-				line-height: 1.2em;
-				margin-bottom: 35px;
-				padding-bottom: 15px;
-				text-transform: capitalize;
-
-				&::before {
-					position: absolute;
-					content: "";
-					right: 0;
-					bottom: 0;
-					height: 1px;
-					width: 30px;
-					background-color: #ffffff;
-				}
-			}
-
-			.map-links {
-				padding: 0;
-
-				li {
-					list-style: none;
-					margin-bottom: 10px;
-					font-size: 14px;
-					padding-inline-start: 25px;
-					position: relative;
-
-					&::before {
-						font-family: "bootstrap-icons";
-						content: "chevron-double-left";
-						-webkit-font-smoothing: antialiased;
-						font-style: normal;
-						font-variant: normal;
-						font-weight: 500;
-						font-size: 12px;
-						position: absolute;
-						right: 0;
-						top: 50%;
-						@include transform(translateY(-50%));
-						color: #fff;
-					}
-
-					a {
-						color: #fff;
-						text-transform: capitalize;
-						@extend %max_lines;
-						-webkit-line-clamp: 1;
-
-						&.btn {
-							padding-left: 0;
-							padding-top: 0;
-							color: $main_color;
-							font-weight: 600;
-						}
-					}
-				}
-			}
-
-			.contact {
-				p {
-					list-style: none;
-					margin-bottom: 10px;
-					font-size: 14px;
-					color: #fff;
-					margin-bottom: 20px;
-
-					i {
-						margin-inline-end: 10px;
-						color: $main_color;
-					}
-				}
-
-				a {
-					color: #fff;
-				}
-			}
-		}
-	}
-
 	.copyright {
 		background-color: transparent;
-		padding: 15px 0;
+		padding: 20px 0;
 		text-align: center;
-		border-top: 1px solid rgba(255, 255, 255, 0.15);
 
 		.copy-text {
 			p {
 				margin-bottom: 0;
-				color: #fff;
+				color: #111;
 				font-size: 14px;
 				margin: 0;
 				text-transform: capitalize;

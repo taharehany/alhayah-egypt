@@ -110,7 +110,7 @@ $padding_section: 80px 0;
 
 //main title
 .main-title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
 
     h2 {
@@ -118,7 +118,6 @@ $padding_section: 80px 0;
         color: #222;
         position: relative;
         margin-bottom: 20px;
-        padding-bottom: 20px;
         font-weight: 600;
 
         // &::before {
@@ -228,12 +227,6 @@ a {
     background-color: $main_color;
     border-color: $main_color;
 }
-
-// .contact-in-page {
-//     .alert {
-//         @include borderRadius(5px);
-//     }
-// }
 
 .alert {
     font-size: 14px;
