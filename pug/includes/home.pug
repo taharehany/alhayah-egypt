@@ -13,7 +13,7 @@ section(class="main-slider")
                         p متخصصون في تكنولوجيا معالجة المياه بأحدث الأساليب العلمية.
                         p نوفر لكم أفضل الحلول لمعالجة المياه و ما عليكم إلا اختيار الأنسب من بينها.
                         div(class="item-btn")
-                            a(href="#!" class="btn") تعرف على الخدمات
+                            a(href="#services" class="btn") تعرف على الخدمات
         div(class="slider-item")
             img(class="img-fluid" data-src="images/slider/slider-2.png" alt="")
             div(class="item-details")
@@ -26,7 +26,7 @@ section(class="main-slider")
                         p مع الحياة.. لا داعي للقلق من تغير لون أو رائحة أو طعم المياه فمهمتنا أن نعيد للمياه نقاءها.
                         p مع الحياة ستصل لكل ما هو حديث ومتطور في عالم المياه و تنقيتها.
                         div(class="item-btn")
-                            a(href="#!" class="btn") تعرف على الخدمات
+                            a(href="#services" class="btn") تعرف على الخدمات
 //main slider
 
 //about us
@@ -50,7 +50,7 @@ section(class="about")
                             li ننفرد بخدمة عملاء مميزة علميًا ومهنيًا.
                             li مع الحياة ستصل لكل ما هو حديث ومتطور في عالم المياه و تنقيتها.
                     div(class="about-btn")
-                        a(href="#!" class="btn") تعرف على الخدمات
+                        a(href="#services" class="btn") تعرف على الخدمات
 //about us
 
 //video
@@ -146,7 +146,7 @@ section(class="cta")
 //cta
 
 //services
-section(class="services")
+section(class="services" id="services")
     div(class="container")
         div(class="main-title")
             h2 خدمات الحياة إيجيبت
@@ -202,7 +202,8 @@ section(class="contact-bg" style="background-image:url('images/bgs/bg-2.jpg')")
     div(class="container")
         div(class="content")
             div(class="icon")
-                i(class="bi bi-telephone-outbound")
+                a(href="tel:01050071667") 
+                    i(class="bi bi-telephone-outbound")
             div(class="text")
                 p خدمة العملاء في حالات الطوارئ 24 ساعة 7 أيام في الأسبوع
                 h2 تواصل معنا
@@ -213,10 +214,10 @@ section(class="contact")
     div(class="container")
         div(class="content")
             div(class="row")
-                div(class="col-lg-4 p-0")
+                div(class="col-lg-4")
                     div(class="image")
                         img(src="images/contact.jpg", class="img-fluid" alt="")
-                div(class="col-lg-8 p-0")
+                div(class="col-lg-8")
                     div(class="contact-form")
                         form(class="needs-validation" novalidate)
                             div(class="row")
@@ -270,19 +271,19 @@ section(class="contact-info")
                     div(class="col-md-4")
                         div(class="info-box")
                             div(class="icon")
+                                i(class="bi bi-telephone")
+                            div(class="info")
+                                h4 الهاتف
+                                p 
+                                    a(href="tel:01050071667" dir="ltr" style="color:#ff4917;font-size:24px;font-wight: 800") 01050071667
+                    div(class="col-md-4")
+                        div(class="info-box")
+                            div(class="icon")
                                 i(class="bi bi-envelope") 
                             div(class="info")
                                 h4 الإيميل
                                 p
                                     a(href="mailto:support@website.com") support@website.com
-                    div(class="col-md-4")
-                        div(class="info-box")
-                            div(class="icon")
-                                i(class="bi bi-telephone")
-                            div(class="info")
-                                h4 الهاتف
-                                p 
-                                    a(href="tel:01050071667" dir="ltr") 01050071667
             div(class="text")
                 div(class="info-logo")
                     a(href="index.html") 

@@ -51,17 +51,34 @@
         }
     }
 
-    section.about {
-        .content {
-            .about-box {
-                margin-bottom: 25px;
-            }
+    section.about .content .about-image {
+        margin-bottom: 30px;
+    }
+
+    section.about-tabs .content .nav {
+        grid-template-columns: repeat(2, calc((100% / 2) - 5px));
+
+        .nav-link {
+            padding: 10px;
+            height: 80px;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
     }
 
-    section.contact-in-page {
-        .contact-form {
-            margin-bottom: 40px;
+    section.about-tabs .content .tab-content .tab-pane {
+        padding: 40px 0;
+    }
+
+    section.contact {
+        .content {
+            .contact-form {
+                padding-inline-start: 0;
+            }
+
+            .image {
+                display: none;
+            }
         }
     }
 }
@@ -82,6 +99,7 @@
                             left: 0;
                             width: 100%;
                         }
+
                         .slider-img {
                             max-width: 400px;
                             margin: auto;
@@ -97,36 +115,49 @@
         }
     }
 
-    section.single-product {
+    section.contact-info {
         .content {
-            .single-product-details {
-                .image {
-                    margin-bottom: 25px;
+            .info-box {
+                margin-bottom: 45px;
+
+                p {
+                    height: auto;
                 }
+            }
+
+            .details {
+                position: static;
+                margin: 0;
             }
         }
     }
 
-    section.thanks {
-        .content {
-            .text {
+    section.main-slider {
+        .slider-item {
+            .item-details {
+                text-align: center;
+                .title {
+                    font-size: 26px;
+                }
                 p {
                     font-size: 18px;
                 }
-            }
-
-            .order-details {
-                padding: 5px;
-
-                table.table {
-                    tbody {
-                        td {
-                            font-size: 12px;
-                        }
-                    }
+                .item-text {
+                    background-color: rgba(0, 0,0,.7);
+                    padding: 25px;
                 }
             }
+            img {
+                object-position: left;
+                opacity: .5;
+            }
         }
+    }
+    section.video, section.contact-bg {
+        padding: 100px 0;
+    }
+    section.contact .content {
+        margin-top: -160px;
     }
 }
 
@@ -162,6 +193,19 @@
             .video-box {
                 height: 20rem;
             }
+        }
+    }
+
+    section.services .content .service-box .details {
+        p {
+            height: auto;
+        }
+    }
+
+    section.contact {
+        .content {
+            padding: 20px;
+
         }
     }
 }

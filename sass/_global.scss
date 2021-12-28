@@ -162,7 +162,7 @@ $padding_section: 80px 0;
     display: none;
 
     button {
-        background-color: var(--main-color);
+        background-color: $main_color;
         width: 45px;
         height: 45px;
         border: none;

@@ -24,7 +24,7 @@ $(document).ready(function () {
   $('.main-slider-carousel').owlCarousel({
     loop: true,
     autoplay: true,
-    autoplayTimeout: 5000,
+    autoplayTimeout: 10000,
     items: 1,
     nav: true,
     rtl: true,
@@ -36,12 +36,9 @@ $(document).ready(function () {
     responsive: {
       0: {
         items: 1,
-        nav: false,
-        dots: true,
       },
       768: {
         items: 1,
-        nav: true,
       },
       992: {
         items: 1,
