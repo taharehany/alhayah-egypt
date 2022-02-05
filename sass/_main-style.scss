@@ -1371,8 +1371,19 @@ section.contact-info {
 
 			a {
 				color: #fff;
-				font-size: 15px;
+				font-size: 22px;
 				margin: 0 10px;
+				width: 45px;
+				height: 45px;
+				display: inline-block;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				line-height: 50px;
+				@include transition(all ease .3s);
+
+				&:hover {
+					background-color: $second_color;
+				}
 			}
 		}
 	}
